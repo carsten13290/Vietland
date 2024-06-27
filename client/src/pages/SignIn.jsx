@@ -1,13 +1,13 @@
 import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import OAuth from '../components/OAuth';
 import {
+  signInFailure,
   signInStart,
   signInSuccess,
-  signInFailure,
 } from '../redux/user/userSlice';
-import OAuth from '../components/OAuth';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -49,13 +49,12 @@ export default function SignIn() {
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
             <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-              Sahand's
+              Xuan Thanh's
             </span>
             Blog
           </Link>
           <p className='text-sm mt-5'>
-            This is a demo project. You can sign in with your email and password
-            or with Google.
+            Bạn có thể đăng nhập bằng email và mật khẩu hoặc đăng nhập trực tiếp bằng tài khoản Google.
           </p>
         </div>
         {/* right */}
@@ -88,7 +87,7 @@ export default function SignIn() {
               {loading ? (
                 <>
                   <Spinner size='sm' />
-                  <span className='pl-3'>Loading...</span>
+                  <span className='pl-3'>Đang tải...</span>
                 </>
               ) : (
                 'Sign In'
@@ -97,9 +96,9 @@ export default function SignIn() {
             <OAuth />
           </form>
           <div className='flex gap-2 text-sm mt-5'>
-            <span>Dont Have an account?</span>
+            <span>Bạn chưa có tài khoản?</span>
             <Link to='/sign-up' className='text-blue-500'>
-              Sign Up
+              Đăng ký tài khoản
             </Link>
           </div>
           {errorMessage && (

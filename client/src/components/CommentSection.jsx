@@ -1,9 +1,9 @@
-import { Alert, Button, Modal, TextInput, Textarea } from 'flowbite-react';
+import { Alert, Button, Modal, Textarea } from 'flowbite-react';
 import { useEffect, useState } from 'react';
+import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Comment from './Comment';
-import { HiOutlineExclamationCircle } from 'react-icons/hi';
 
 export default function CommentSection({ postId }) {
   const { currentUser } = useSelector((state) => state.user);
@@ -114,7 +114,7 @@ export default function CommentSection({ postId }) {
     <div className='max-w-2xl mx-auto w-full p-3'>
       {currentUser ? (
         <div className='flex items-center gap-1 my-5 text-gray-500 text-sm'>
-          <p>Signed in as:</p>
+          <p>Đăng nhập với tư cách là:</p>
           <img
             className='h-5 w-5 object-cover rounded-full'
             src={currentUser.profilePicture}
@@ -129,9 +129,9 @@ export default function CommentSection({ postId }) {
         </div>
       ) : (
         <div className='text-sm text-teal-500 my-5 flex gap-1'>
-          You must be signed in to comment.
+          Bạn phải đăng nhập để bình luận
           <Link className='text-blue-500 hover:underline' to={'/sign-in'}>
-            Sign In
+            Đăng nhập
           </Link>
         </div>
       )}
@@ -152,7 +152,7 @@ export default function CommentSection({ postId }) {
               {200 - comment.length} characters remaining
             </p>
             <Button outline gradientDuoTone='purpleToBlue' type='submit'>
-              Submit
+              Gửi bình luận
             </Button>
           </div>
           {commentError && (
@@ -163,11 +163,11 @@ export default function CommentSection({ postId }) {
         </form>
       )}
       {comments.length === 0 ? (
-        <p className='text-sm my-5'>No comments yet!</p>
+        <p className='text-sm my-5'>Chưa có bình luận nào!</p>
       ) : (
         <>
           <div className='text-sm my-5 flex items-center gap-1'>
-            <p>Comments</p>
+            <p>Bình luận</p>
             <div className='border border-gray-400 py-1 px-2 rounded-sm'>
               <p>{comments.length}</p>
             </div>
@@ -197,17 +197,17 @@ export default function CommentSection({ postId }) {
           <div className='text-center'>
             <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
             <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
-              Are you sure you want to delete this comment?
+              Bạn có chắc mình muốn xoá bình luận này?
             </h3>
             <div className='flex justify-center gap-4'>
               <Button
                 color='failure'
                 onClick={() => handleDelete(commentToDelete)}
               >
-                Yes, I'm sure
+                Có, hãy xoá bình luận này !
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
-                No, cancel
+                Không, đừng xoá
               </Button>
             </div>
           </div>

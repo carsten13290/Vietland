@@ -1,9 +1,8 @@
+import { Button, Textarea } from 'flowbite-react';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
-import { Button, Textarea } from 'flowbite-react';
-import { set } from 'mongoose';
 
 export default function Comment({ comment, onLike, onEdit, onDelete }) {
   const [user, setUser] = useState({});
@@ -81,7 +80,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                 gradientDuoTone='purpleToBlue'
                 onClick={handleSave}
               >
-                Save
+                Lưu
               </Button>
               <Button
                 type='button'
@@ -90,7 +89,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                 outline
                 onClick={() => setIsEditing(false)}
               >
-                Cancel
+                Huỷ
               </Button>
             </div>
           </>
@@ -123,14 +122,14 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                       onClick={handleEdit}
                       className='text-gray-400 hover:text-blue-500'
                     >
-                      Edit
+                      Sửa
                     </button>
                     <button
                       type='button'
                       onClick={() => onDelete(comment._id)}
                       className='text-gray-400 hover:text-red-500'
                     >
-                      Delete
+                      Xoá
                     </button>
                   </>
                 )}

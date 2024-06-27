@@ -1,17 +1,16 @@
 import { Sidebar } from 'flowbite-react';
+import { useEffect, useState } from 'react';
 import {
-  HiUser,
+  HiAnnotation,
   HiArrowSmRight,
+  HiChartPie,
   HiDocumentText,
   HiOutlineUserGroup,
-  HiAnnotation,
-  HiChartPie,
+  HiUser,
 } from 'react-icons/hi';
-import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { signoutSuccess } from '../redux/user/userSlice';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 
 export default function DashSidebar() {
   const location = useLocation();
@@ -51,7 +50,7 @@ export default function DashSidebar() {
                 icon={HiChartPie}
                 as='div'
               >
-                Dashboard
+                Bảng điều khiển
               </Sidebar.Item>
             </Link>
           )}
@@ -63,7 +62,7 @@ export default function DashSidebar() {
               labelColor='dark'
               as='div'
             >
-              Profile
+              Tài khoản
             </Sidebar.Item>
           </Link>
           {currentUser.isAdmin && (
@@ -73,7 +72,7 @@ export default function DashSidebar() {
                 icon={HiDocumentText}
                 as='div'
               >
-                Posts
+                Bài viết
               </Sidebar.Item>
             </Link>
           )}
@@ -85,7 +84,7 @@ export default function DashSidebar() {
                   icon={HiOutlineUserGroup}
                   as='div'
                 >
-                  Users
+                  Người dùng
                 </Sidebar.Item>
               </Link>
               <Link to='/dashboard?tab=comments'>
@@ -94,7 +93,7 @@ export default function DashSidebar() {
                   icon={HiAnnotation}
                   as='div'
                 >
-                  Comments
+                  Bình luận
                 </Sidebar.Item>
               </Link>
             </>
@@ -104,7 +103,7 @@ export default function DashSidebar() {
             className='cursor-pointer'
             onClick={handleSignout}
           >
-            Sign Out
+            Đăng xuất
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>
