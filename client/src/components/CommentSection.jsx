@@ -141,7 +141,7 @@ export default function CommentSection({ postId }) {
           className='border border-teal-500 rounded-md p-3'
         >
           <Textarea
-            placeholder='Add a comment...'
+            placeholder='Viết một bình luận...'
             rows='3'
             maxLength='200'
             onChange={(e) => setComment(e.target.value)}
@@ -149,7 +149,7 @@ export default function CommentSection({ postId }) {
           />
           <div className='flex justify-between items-center mt-5'>
             <p className='text-gray-500 text-xs'>
-              {200 - comment.length} characters remaining
+             còn lại {200 - comment.length} ký tự
             </p>
             <Button outline gradientDuoTone='purpleToBlue' type='submit'>
               Gửi bình luận

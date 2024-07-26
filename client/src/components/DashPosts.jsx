@@ -117,7 +117,7 @@ export default function DashPosts() {
                       }}
                       className='font-medium text-red-500 hover:underline cursor-pointer'
                     >
-                      Delete
+                      Xoá
                     </span>
                   </Table.Cell>
                   <Table.Cell>
@@ -125,7 +125,7 @@ export default function DashPosts() {
                       className='text-teal-500 hover:underline'
                       to={`/update-post/${post._id}`}
                     >
-                      <span>Edit</span>
+                      <span>Sửa</span>
                     </Link>
                   </Table.Cell>
                 </Table.Row>
@@ -137,12 +137,12 @@ export default function DashPosts() {
               onClick={handleShowMore}
               className='w-full text-teal-500 self-center text-sm py-7'
             >
-              Show more
+              Hiển thị thêm
             </button>
           )}
         </>
       ) : (
-        <p>You have no posts yet!</p>
+        <p>Bạn chưa có bài viết nào !</p>
       )}
       <Modal
         show={showModal}

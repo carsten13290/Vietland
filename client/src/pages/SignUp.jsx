@@ -44,9 +44,9 @@ export default function SignUp() {
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
             <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-              Xuân Thanh's
+              Việt
             </span>
-            Blog
+            Land
           </Link>
           <p className='text-sm mt-5'>
           Bạn có thể đăng nhập bằng email và mật khẩu hoặc đăng nhập trực tiếp bằng tài khoản Google.
@@ -91,7 +91,7 @@ export default function SignUp() {
               {loading ? (
                 <>
                   <Spinner size='sm' />
-                  <span className='pl-3'>Loading...</span>
+                  <span className='pl-3'>Đang tải...</span>
                 </>
               ) : (
                 'Sign Up'

@@ -89,7 +89,7 @@ export default function CreatePost() {
         <div className='flex flex-col gap-4 sm:flex-row justify-between'>
           <TextInput
             type='text'
-            placeholder='Title'
+            placeholder='Viết tựa đề cho bài viết....'
             required
             id='title'
             className='flex-1'
@@ -102,10 +102,10 @@ export default function CreatePost() {
               setFormData({ ...formData, category: e.target.value })
             }
           >
-            <option value='uncategorized'>Chọn danh mục</option>
-            <option value='javascript'>Nông nghiệp</option>
-            <option value='reactjs'>Nội thất</option>
-            <option value='nextjs'>Công nghệ</option>
+            <option value='Chưa thiết lập'>Chọn danh mục</option>
+            <option value='Nhận định xu hướng'>Nhận định xu hướng</option>
+            <option value='Con số thống kê'>Con số thống kê</option>
+            <option value='Pháp lý'>Pháp lý</option>
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
@@ -130,7 +130,7 @@ export default function CreatePost() {
                 />
               </div>
             ) : (
-              'Upload Image'
+              'Tải ảnh'
             )}
           </Button>
         </div>
@@ -144,7 +144,7 @@ export default function CreatePost() {
         )}
         <ReactQuill
           theme='snow'
-          placeholder='Write something...'
+          placeholder='Viết gì đó...'
           className='h-72 mb-12'
           required
           onChange={(value) => {

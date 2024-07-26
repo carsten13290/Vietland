@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import localImage from '../assets/SaiGon.jpg';
 import CallToAction from '../components/CallToAction';
 import ListingItem from '../components/ListingItem';
 import PostCard from '../components/PostCard';
@@ -55,22 +56,22 @@ export default function Home() {
 
   return (
     <div>
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto '>
-        <h1 className='text-3xl font-bold lg:text-6xl'>
-          Chào mừng tới Xuân Thanh's blog
+      <div
+        className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto bg-cover bg-center'
+        style={{ backgroundImage: `url(${localImage})` }}
+      >
+        <h1 className='text-gray-300 text-lg sm:text-xl drop-shadow-lg'>
+          Chào mừng bạn tới với Việt Land
         </h1>
-        <p className='text-gray-500 text-xs sm:text-sm'>
-          Tại đây, bạn sẽ tìm thấy nhiều bài viết và hướng dẫn về các chủ đề như áp dụng Thực hành nông nghiệp tốt (GAP) trong sản xuất nông nghiệp.
+        <p className='text-gray-300 text-lg sm:text-xl drop-shadow-lg'>
+          Tại đây, bạn sẽ có thể liên lạc trực tiếp với chủ bất động sản, tránh trường hợp tin đăng giả, gây thiệt hại về tài chính và thời gian của bạn.
         </p>
         <Link
-          to='/search'
-          className='text-xs sm:text-sm text-teal-500 font-bold hover:underline'
+          to='/about'
+          className='text-lg sm:text-xl text-teal-300 font-bold hover:underline drop-shadow-lg'
         >
-          Xem toàn bộ bài viết
+          Hiểu hơn về chúng tôi
         </Link>
-      </div>
-      <div className='p-3 bg-amber-100 dark:bg-slate-700'>
-        <CallToAction />
       </div>
 
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7'>
@@ -84,7 +85,7 @@ export default function Home() {
               ))}
             </div>
             <Link
-              to='/search'
+              to='/posts'
               className='text-lg text-teal-500 hover:underline text-center'
             >
               Xem toàn bộ bài viết
@@ -97,7 +98,7 @@ export default function Home() {
           {offerListings && offerListings.length > 0 && (
             <div className=''>
               <h2 className='text-2xl font-semibold text-center'>
-                Các ưu đãi gần đây
+                Các sản phẩm gần đây
               </h2>
               <div className='flex flex-wrap gap-4'>
                 {offerListings.map((listing) => (
@@ -108,7 +109,7 @@ export default function Home() {
                 to='/search?offer=true'
                 className='text-sm text-blue-800 hover:underline text-center'
               >
-                Xem thêm các ưu đãi
+                Xem các sản phẩm gần đây
               </Link>
             </div>
           )}
@@ -151,6 +152,10 @@ export default function Home() {
             </div>
           )}
         </div>
+      </div>
+
+      <div className='p-3 bg-amber-100 dark:bg-slate-700'>
+        <CallToAction />
       </div>
     </div>
   );

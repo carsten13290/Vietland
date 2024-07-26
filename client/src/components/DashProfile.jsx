@@ -239,17 +239,28 @@ export default function DashProfile() {
           disabled={loading || imageFileUploading}
         >
           {loading ? 'Loading...' : 'Update'}
-        </Button>
+          </Button>
         {currentUser.isAdmin && (
-          <Link to={'/create-post'}>
-            <Button
-              type='button'
-              gradientDuoTone='purpleToPink'
-              className='w-full'
-            >
-              Tạo một bài viết
-            </Button>
-          </Link>
+          <>
+            <Link to={'/create-post'}>
+              <Button
+                type='button'
+                gradientDuoTone='purpleToPink'
+                className='w-full'
+              >
+                Tạo một bài viết
+              </Button>
+            </Link>
+            <Link to={'/create-listing'}>
+              <Button
+                type='button'
+                gradientDuoTone='purpleToBlue'
+                className='w-full mt-2'
+              >
+                Tạo một sản phẩm
+              </Button>
+            </Link>
+          </>
         )}
       </form>
       <div className='text-red-500 flex justify-between mt-5'>

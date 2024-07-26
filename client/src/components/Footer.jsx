@@ -1,5 +1,5 @@
 import { Footer } from 'flowbite-react';
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
+import { BsFacebook, BsGithub, BsInstagram, BsTiktok, BsYoutube } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 export default function FooterCom() {
   return (
@@ -12,33 +12,33 @@ export default function FooterCom() {
               className='self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white'
             >
               <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-                Xuân Thanh's
+               Việt
               </span>
-              Blog
+              Land
             </Link>
           </div>
           <div className='grid grid-cols-2 gap-8 mt-4 sm:grid-cols-3 sm:gap-6'>
             <div>
-              <Footer.Title title='About' />
+              <Footer.Title title='Về chúng tôi' />
               <Footer.LinkGroup col>
                 <Footer.Link
                   href='https://noithatxuanthanhchogao.com/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                 Nội Thất Xuân Thanh
+                 Cộng tác với Việt Land
                 </Footer.Link>
                 <Footer.Link
                   href='/about'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  Xuân Thanh's Blog
+                  Giới thiệu
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title='Follow us' />
+              <Footer.Title title='Trang liên kết' />
               <Footer.LinkGroup col>
                 <Footer.Link
                   href='https://github.com/carsten13290?tab=repositories'
@@ -47,14 +47,14 @@ export default function FooterCom() {
                 >
                   Github
                 </Footer.Link>
-                <Footer.Link href='#'>Discord</Footer.Link>
+                <Footer.Link href='https://noithatxuanthanhchogao.blogspot.com/'>BlogSpot</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title='Legal' />
+              <Footer.Title title='Chính sách' />
               <Footer.LinkGroup col>
-                <Footer.Link href='#'>Chính sách bảo mật</Footer.Link>
-                <Footer.Link href='#'>Điều khoản &amp; Điều kiện</Footer.Link>
+                <Footer.Link href='/privacypolicy'>Chính sách bảo mật</Footer.Link>
+                <Footer.Link href='/termsandconditions'>Điều khoản &amp; Điều kiện</Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>
@@ -63,16 +63,15 @@ export default function FooterCom() {
         <div className='w-full sm:flex sm:items-center sm:justify-between'>
           <Footer.Copyright
             href='#'
-            by="Xuân Thanh's Blog"
+            by="Việt Land"
             year={new Date().getFullYear()}
           />
           <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
-            <Footer.Icon href='#' icon={BsFacebook}/>
-            <Footer.Icon href='#' icon={BsInstagram}/>
-            <Footer.Icon href='#' icon={BsTwitter}/>
+            <Footer.Icon href='https://www.facebook.com/profile.php?id=100063700112350&mibextid=LQQJ4d' icon={BsFacebook}/>
+            <Footer.Icon href='https://www.instagram.com/noithatxuanthanhchogao/' icon={BsInstagram}/>
+            <Footer.Icon href='https://www.youtube.com/@NoiThatXuanThanhChoGao' icon={BsYoutube}/>
             <Footer.Icon href='https://github.com/carsten13290' icon={BsGithub}/>
-            <Footer.Icon href='#' icon={BsDribbble}/>
-
+            <Footer.Icon href='https://www.tiktok.com/@noithatxuanthanhchogao' icon={BsTiktok}/>
           </div>
         </div>
       </div>

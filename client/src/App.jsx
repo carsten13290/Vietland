@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import ItemList from './pages/ItemList';
 import Listing from './pages/Listing';
+import PostList from './pages/PostList';
 import PostPage from './pages/PostPage';
 import Projects from './pages/Projects';
 import Search from './pages/Search';
@@ -18,6 +19,8 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import UpdateListing from './pages/UpdateListing';
 import UpdatePost from './pages/UpdatePost';
+import PrivacyPolicy from './pages/privacypolicy'; // Import PrivacyPolicy
+import TermsAndConditions from './pages/termsandconditions'; // Import TermsAndConditions
 
 export default function App() {
   return (
@@ -34,6 +37,9 @@ export default function App() {
         <Route path='/listing/:listingId' element={<Listing />} />
         <Route path='/create-listing' element={<CreateListing />} />
         <Route path='/update-listing/:listingId' element={<UpdateListing />} />
+        <Route path='/posts' element={<PostList />} />
+        <Route path='/privacypolicy' element={<PrivacyPolicy />} /> 
+        <Route path='/termsandconditions' element={<TermsAndConditions />} /> 
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>
@@ -48,4 +54,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-

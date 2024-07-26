@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import DashSidebar from '../components/DashSidebar';
-import DashProfile from '../components/DashProfile';
-import DashPosts from '../components/DashPosts';
-import DashUsers from '../components/DashUsers';
 import DashComments from '../components/DashComments';
+import DashLinks from '../components/DashLinks'; // Thêm dòng này
+import DashPosts from '../components/DashPosts';
+import DashProfile from '../components/DashProfile';
+import DashSidebar from '../components/DashSidebar';
+import DashUsers from '../components/DashUsers';
 import DashboardComp from '../components/DashboardComp';
 
 export default function Dashboard() {
@@ -33,6 +34,8 @@ export default function Dashboard() {
       {tab === 'comments' && <DashComments />}
       {/* dashboard comp */}
       {tab === 'dash' && <DashboardComp />}
+      {/* links */}
+      {tab === 'links' && <DashLinks />}  {/* Thêm dòng này */}
     </div>
   );
 }

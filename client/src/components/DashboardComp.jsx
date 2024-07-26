@@ -205,7 +205,7 @@ export default function DashboardComp() {
                 </Table.Body>
               ))}
           </Table>
-        </div>
+        </div> 
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import {
   HiArrowSmRight,
   HiChartPie,
   HiDocumentText,
+  HiOutlineShoppingBag,
   HiOutlineUserGroup,
   HiUser,
 } from 'react-icons/hi';
@@ -94,6 +95,15 @@ export default function DashSidebar() {
                   as='div'
                 >
                   Bình luận
+                </Sidebar.Item>
+              </Link>
+              <Link to='/dashboard?tab=links'>  {/* Thêm mục này */}
+                <Sidebar.Item
+                  active={tab === 'links'}
+                  icon={HiOutlineShoppingBag}
+                  as='div'
+                >
+                  Sản phẩm
                 </Sidebar.Item>
               </Link>
             </>

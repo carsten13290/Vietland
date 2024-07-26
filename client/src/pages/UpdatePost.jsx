@@ -50,7 +50,7 @@ export default function UpdatePost() {
   const handleUpdloadImage = async () => {
     try {
       if (!file) {
-        setImageUploadError('Please select an image');
+        setImageUploadError('Vui lòng chọn một ảnh');
         return;
       }
       setImageUploadError(null);
@@ -66,7 +66,7 @@ export default function UpdatePost() {
           setImageUploadProgress(progress.toFixed(0));
         },
         (error) => {
-          setImageUploadError('Image upload failed');
+          setImageUploadError('Tải ảnh lên thất bại');
           setImageUploadProgress(null);
         },
         () => {
@@ -78,7 +78,7 @@ export default function UpdatePost() {
         }
       );
     } catch (error) {
-      setImageUploadError('Image upload failed');
+      setImageUploadError('Tải ảnh lên thất bại');
       setImageUploadProgress(null);
       console.log(error);
     }
@@ -104,7 +104,7 @@ export default function UpdatePost() {
         navigate(`/post/${data.slug}`);
       }
     } catch (error) {
-      setPublishError('Something went wrong');
+      setPublishError('Có lỗi xảy ra, vui lòng thử lại');
     }
   };
   return (
@@ -129,10 +129,10 @@ export default function UpdatePost() {
             }
             value={formData.category}
           >
-            <option value='uncategorized'>Chọn danh mục</option>
-            <option value='javascript'>Nông nghiệp</option>
-            <option value='reactjs'>Nội thất</option>
-            <option value='nextjs'>Công nghệ</option>
+           <option value='Chưa thiết lập'>Chọn danh mục</option>
+           <option value='Nhận định xu hướng'>Nhận định xu hướng</option>
+            <option value='Con số thống kê'>Con số thống kê</option>
+            <option value='Pháp lý'>Pháp lý</option>
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
@@ -157,7 +157,7 @@ export default function UpdatePost() {
                 />
               </div>
             ) : (
-              'Upload Image'
+              'Tải ảnh lên'
             )}
           </Button>
         </div>
@@ -172,7 +172,7 @@ export default function UpdatePost() {
         <ReactQuill
           theme='snow'
           value={formData.content}
-          placeholder='Write something...'
+          placeholder='Hãy nhập liệu vào...'
           className='h-72 mb-12'
           required
           onChange={(value) => {
