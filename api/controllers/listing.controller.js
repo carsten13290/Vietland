@@ -1,9 +1,9 @@
-import listing from '../models/listing.model.js'; // Đổi Listing thành listing
+import Listing from '../models/listing.model.js'; // Đổi Listing thành listing
 import { errorHandler } from '../utils/error.js';
 
 export const createListing = async (req, res, next) => {
   try {
-    const listing = await listing.create(req.body);
+    const listing = await Listing.create(req.body); // Đổi thành Listing
     return res.status(201).json(listing);
   } catch (error) {
     next(error);
@@ -12,7 +12,7 @@ export const createListing = async (req, res, next) => {
 
 export const deleteListing = async (req, res, next) => {
   try {
-    const listing = await listing.findById(req.params.id);
+    const listing = await Listing.findById(req.params.id); // Đổi thành Listing
 
     if (!listing) {
       return next(errorHandler(404, 'Không tìm thấy sản phẩm!'));
@@ -22,7 +22,7 @@ export const deleteListing = async (req, res, next) => {
       return next(errorHandler(401, 'Bạn chỉ có thể xoá sản phẩm của mình!'));
     }
 
-    await listing.findByIdAndDelete(req.params.id);
+    await Listing.findByIdAndDelete(req.params.id); // Đổi thành Listing
     res.status(200).json('Sản phẩm đã bị xoá!');
   } catch (error) {
     next(error);
@@ -31,7 +31,7 @@ export const deleteListing = async (req, res, next) => {
 
 export const updateListing = async (req, res, next) => {
   try {
-    const listing = await listing.findById(req.params.id);
+    const listing = await Listing.findById(req.params.id); // Đổi thành Listing
     if (!listing) {
       return next(errorHandler(404, 'Không tìm thấy sản phẩm!'));
     }
@@ -39,7 +39,7 @@ export const updateListing = async (req, res, next) => {
       return next(errorHandler(401, 'Bạn chỉ có thể sửa sản phẩm của mình!'));
     }
 
-    const updatedListing = await listing.findByIdAndUpdate(
+    const updatedListing = await Listing.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -52,7 +52,7 @@ export const updateListing = async (req, res, next) => {
 
 export const getListing = async (req, res, next) => {
   try {
-    const listing = await listing.findById(req.params.id);
+    const listing = await Listing.findById(req.params.id); // Đổi thành Listing
     if (!listing) {
       return next(errorHandler(404, 'Không tìm thấy sản phẩm!'));
     }
@@ -96,7 +96,7 @@ export const getListings = async (req, res, next) => {
 
     const order = req.query.order || 'desc';
 
-    const listings = await listing.find({
+    const listings = await Listing.find({ // Đổi thành Listing
       name: { $regex: searchTerm, $options: 'i' },
       offer,
       furnished,
