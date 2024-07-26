@@ -58,6 +58,6 @@ const listingSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const listing = mongoose.model('listing', listingSchema); // Đổi Listing thành listing
+const Listing = mongoose.model('Listing', listingSchema); // Đổi Listing thành listing
 
-export default listing;
+export default Listing;
